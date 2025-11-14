@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'signup_screen.dart';
 
 class SigninScreen extends StatefulWidget {
   const SigninScreen({super.key});
@@ -63,7 +64,18 @@ class _SigninScreenState extends State<SigninScreen> {
               ),
               const SizedBox(height: 24),
 
-              // Login button
+              // Sign Up transfer
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const SignupScreen()),
+                  );
+                },
+                child: const Text("Don't have an account? Register"),
+              ),
+
+              // Sign In button
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
